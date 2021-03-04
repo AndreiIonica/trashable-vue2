@@ -3,9 +3,9 @@
 - [ ] JS - 1 saptamana
 
   - [x] General
-  - [ ] Variabile, obiecte
-  - [ ] Promises
-  - [ ] Browser APIs
+  - [x] Variabile, obiecte
+  - [x] Promises
+  - [x] Browser APIs
   - [ ] Linter and Formatter
   - [ ] CSS layouts - 3 zile
 
@@ -14,9 +14,9 @@
 - [ ] Dezvoltare Aplicatie - ? zile
 
   - Sapt 1
-    - [ ] Project Structure
-    - [ ] Librarie Componente
-    - [ ] Setup Router
+    - [x] Project Structure
+    - [x] Librarie Componente
+    - [x] Setup Router
   - Sapt 2
     - [ ] Ecran Login
       - [ ]
@@ -37,10 +37,10 @@
     - Animatii Router
 
 - [ ] Design
-  - [ ] Ales paleta culori
-  - [ ] Retusat Componente
-  - [ ] Ecran Start
-  - [ ] Map Start
+  - [x] Ales paleta culori
+  - [x] Retusat Componente
+  - [x] Ecran Start
+  - [x] Map Start
     - [ ] Logut Menu
-  - [ ] Ecran login
-  - [ ] Culorti Dark Mode
+  - [x] Ecran login
+  - [x] Culori Dark Mode
