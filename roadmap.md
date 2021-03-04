@@ -13,17 +13,16 @@
 
 - [ ] Dezvoltare Aplicatie - ? zile
 
-  - Sapt 1
+  - [x] Sapt 1
     - [x] Project Structure
     - [x] Librarie Componente
     - [x] Setup Router
-  - Sapt 2
+  - [ ] Sapt 2
     - [ ] Ecran Login
-      - [ ]
       - [ ] Data Manager
         - [ ] Cache?
     - [ ] Ecran Start
-  - Sapt 3
+  - [ ] Sapt 3
 
     - [ ] Ecran Mapa
       - [ ] Leaflet
@@ -34,7 +33,7 @@
         - [ ] Log Out Menu
 
   - Optionale
-    - Animatii Router
+    - [x] Animatii Router
 
 - [ ] Design
   - [x] Ales paleta culori
