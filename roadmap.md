@@ -7,11 +7,8 @@
   - [x] Promises
   - [x] Browser APIs
   - [ ] Linter and Formatter
-  - [ ] CSS layouts - 3 zile
 
-- [ ] Vue - 1 saptamana
-
-- [ ] Dezvoltare Aplicatie - ? zile
+* [ ] Dezvoltare Aplicatie - ? zile
 
   - [x] Sapt 1
     - [x] Project Structure
@@ -21,7 +18,7 @@
     - [ ] Ecran Login
       - [ ] Data Manager
         - [ ] Cache?
-    - [ ] Ecran Start
+    - [x] Ecran Start
   - [ ] Sapt 3
 
     - [ ] Ecran Mapa
@@ -35,7 +32,7 @@
   - Optionale
     - [x] Animatii Router
 
-- [ ] Design
+* [ ] Design
   - [x] Ales paleta culori
   - [x] Retusat Componente
   - [x] Ecran Start

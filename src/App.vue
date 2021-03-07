@@ -7,13 +7,7 @@
 </template>
 
 <script>
-export default {
-  mounted() {
-    setTimeout(() => {
-      this.$router.push('/login');
-    }, 2000);
-  },
-};
+export default {};
 </script>
 
 <style>
