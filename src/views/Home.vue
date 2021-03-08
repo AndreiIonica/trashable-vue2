@@ -1,12 +1,11 @@
 <template>
-  <div class="top-container">
+  <div id="start-container">
     <div id="first">
       <button class="btn-long btn-1" @click="navigateToMap">Start</button>
     </div>
     <div id="second">
       <button class="btn-long" @click="navigateToLogin">Log In</button>
     </div>
-    <!-- <img src="../assets/earth.png" alt="" /> -->
   </div>
 </template>
 
@@ -29,6 +28,33 @@ export default {
 </script>
 
 <style scoped>
+/* CSS bullshit to make div full screen */
+#start-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background-image: url(../assets/earth-whiten.png);
+  background-size: 125% 100%;
+  background-position-x: center;
+
+  background-repeat: no-repeat;
+}
+#first {
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+#second {
+  position: fixed;
+  top: 60%;
+  width: 100%;
+  text-align: center;
+}
+
 .btn-long {
   font-family: Roboto;
   font-weight: bold;
@@ -44,35 +70,9 @@ export default {
   box-sizing: border-box;
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.25);
 
-  border: 0.1px solid #000000;
+  border: 1px solid #000000;
   border-radius: 10px;
 
   width: 45%;
-}
-#first {
-  position: fixed;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-}
-#second {
-  position: fixed;
-  top: 60%;
-  width: 100%;
-  text-align: center;
-}
-/* CSS bullshit to make div full screen */
-.top-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  background-image: url(../assets/earth-whiten.png);
-  background-size: 125% 100%;
-  background-position-x: center;
-
-  background-repeat: no-repeat;
 }
 </style>
