@@ -22,6 +22,15 @@ export default {};
 .fade-leave-active {
   opacity: 0;
 }
+body {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100vw;
+}
 /* TODO: add needed assets(icons, map markers) */
 /* TODO: color scheme here */
 </style>
