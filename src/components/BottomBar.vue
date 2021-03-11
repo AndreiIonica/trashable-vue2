@@ -1,17 +1,24 @@
 <template>
   <div id="control-container">
     <button class="btn-tall" @click="focusMap">Focus</button>
-    <button class="btn-tall">Closest</button>
+    <button class="btn-tall" @click="findClosest">Closest</button>
+    <button class="btn-tall" @click="logOut">Log Out</button>
   </div>
 </template>
 
 <script>
 /* eslint-disable no-undef */
+
 export default {
-  props: ['locationObj'],
   methods: {
     focusMap() {
       this.$emit('focus');
+    },
+    findClosest() {
+      this.$emit('closest');
+    },
+    logOut() {
+      this.$emit('logout');
     },
   },
 };
@@ -19,7 +26,9 @@ export default {
 
 <style scoped>
 #control-container {
-  background: red;
+  background: #282828;
+  border: 1px solid #aad6ac;
+  box-sizing: border-box;
 }
 .btn-tall {
   font-family: Roboto;
@@ -34,7 +43,7 @@ export default {
   padding-bottom: 3%;
 
   border-radius: 10px;
-  width: 30%;
-  margin: 5% 2%;
+  width: 31%;
+  margin: 3% 1%;
 }
 </style>
