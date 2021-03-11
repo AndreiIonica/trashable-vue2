@@ -1,7 +1,7 @@
 <template>
   <div id="map-container">
     <div id="map"></div>
-    <BottomBar :locationObj="locationData" @focus="focusMap" />
+    <BottomBar @focus="focusMap" />
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 import BottomBar from '../components/BottomBar.vue';
 
 // Because leaflet is loaded from a CDN and not from node_modules
-// vue doesnt know about it and thrwos a fit
+// vue doesnt know about it and throws a fit
 /* eslint-disable no-undef */
 export default {
   data() {
@@ -20,35 +20,27 @@ export default {
   },
   mounted() {
     const vm = this;
-
     const currentLocIcon = L.icon({
       // eslint-disable-next-line global-require
       iconUrl: require('../assets/marker-icon-orange.png'),
       iconSize: [25, 40],
       iconAnchor: [12, 40],
     });
-
-    const map = L.map('map', {
-      zoomControl: false,
-    }).setView([44.8606, 24.8678], 15);
+    const map = L.map('map').setView([44.8606, 24.8678], 15);
     this.mapObj = map;
-
     L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
       maxZoom: 20,
     }).addTo(map);
-
     function locationSucces(pos) {
       const lat = pos.coords.latitude;
       const lon = pos.coords.longitude;
       L.marker([lat, lon], {
         icon: currentLocIcon,
       }).addTo(map);
-
       map.setView([lat, lon], 20);
       console.log(lat, lon);
       vm.locationData.push(lat, lon);
     }
-
     navigator.geolocation.getCurrentPosition(locationSucces);
   },
   methods: {
@@ -75,15 +67,15 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 90%;
+  height: 92%;
   margin: 0;
 }
-
+/* Id of div inside BottomBar component, a bit dirty,might be a better way to do this */
 #control-container {
   position: fixed;
   width: 100%;
-  height: 10%;
-  top: 90%;
+  height: 8%;
+  top: 92%;
   left: 0;
 }
 </style>
