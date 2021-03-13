@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 async function signup(email, password, name) {
   const res = await axios.post('https://trashable-server.herokuapp.com/api/0.1/auth/signup', {
     email,
