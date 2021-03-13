@@ -15,28 +15,27 @@
     - [x] Librarie Componente
     - [x] Setup Router
   - [ ] Sapt 2
-    - [ ] Ecran Login
+    - [x] Ecran Login
       - [ ] Data Manager
-        - [ ] Cache?
     - [x] Ecran Start
   - [ ] Sapt 3
 
-    - [ ] Ecran Mapa
-      - [ ] Leaflet
-      - [ ] Functionalitate
-        - [ ] Focus
+    - [x] Ecran Mapa
+      - [x] Leaflet
+      - [x] Functionalitate
+        - [x] Focus
         - [ ] Cel Mai Apropiat Cos( proximitate )
-        - [ ] Zoom Control
-        - [ ] Log Out Menu
+        - [x] Zoom Control
+        - [x] Log Out Menu
 
   - Optionale
     - [x] Animatii Router
 
-* [ ] Design
+* [x] Design
   - [x] Ales paleta culori
   - [x] Retusat Componente
   - [x] Ecran Start
   - [x] Map Start
-    - [ ] Logut Menu
+    - [x] Logut Menu
   - [x] Ecran login
   - [x] Culori Dark Mode
