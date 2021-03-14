@@ -1,12 +1,15 @@
 <template>
   <div id="map-container">
     <div id="map"></div>
-    <BottomBar @focus="focusMap" />
+    <BottomBar @focus="focusMap" @closest="findClosest" />
   </div>
 </template>
 
 <script>
+/* eslint-disable object-curly-newline */
 import BottomBar from '../components/BottomBar.vue';
+import { createMap, currentLocIcon, trashcanIcon } from '../lib/MapLoader';
+import { toateCosurile } from '../lib/DataManager';
 
 // Because leaflet is loaded from a CDN and not from node_modules
 // vue doesnt know about it and throws a fit
@@ -16,36 +19,52 @@ export default {
     return {
       locationData: [],
       mapObj: {},
+      trashcans: [],
+      markers: [],
+      closestTrashcan: -1,
+      polyline: -1,
     };
   },
-  mounted() {
+  async mounted() {
+    this.trashcans = await toateCosurile();
+    this.mapObj = createMap();
+
     const vm = this;
-    const currentLocIcon = L.icon({
-      // eslint-disable-next-line global-require
-      iconUrl: require('../assets/marker-icon-orange.png'),
-      iconSize: [25, 40],
-      iconAnchor: [12, 40],
-    });
-    const map = L.map('map').setView([44.8606, 24.8678], 15);
-    this.mapObj = map;
-    L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
-      maxZoom: 20,
-    }).addTo(map);
     function locationSucces(pos) {
       const lat = pos.coords.latitude;
       const lon = pos.coords.longitude;
+
       L.marker([lat, lon], {
         icon: currentLocIcon,
-      }).addTo(map);
-      map.setView([lat, lon], 20);
+      }).addTo(vm.mapObj);
+
+      vm.mapObj.setView([lat, lon], 20);
       console.log(lat, lon);
+
       vm.locationData.push(lat, lon);
     }
+
     navigator.geolocation.getCurrentPosition(locationSucces);
+
+    this.trashcans.forEach((tr) => {
+      let { latitude, longitude } = tr;
+      latitude = parseFloat(latitude);
+      longitude = parseFloat(longitude);
+
+      const marker = L.marker([latitude, longitude], {
+        icon: trashcanIcon,
+      });
+      marker.addTo(this.mapObj);
+
+      vm.markers.push(marker);
+    });
   },
   methods: {
     focusMap() {
       this.mapObj.setView(this.locationData, 30);
+    },
+    findClosest() {
+      // TODO
     },
   },
   components: { BottomBar },

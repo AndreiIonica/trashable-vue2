@@ -47,7 +47,8 @@ async function orase() {
   return res.data;
 }
 
-export default {
+// prettier-ignore
+export {
   signup,
   login,
   creareCos,
