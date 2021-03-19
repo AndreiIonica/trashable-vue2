@@ -17,7 +17,7 @@ import { toateCosurile } from '../lib/DataManager';
 export default {
   data() {
     return {
-      locationData: [],
+      locationData: -1,
       mapObj: {},
       trashcans: [],
       markers: [],
@@ -40,7 +40,7 @@ export default {
       vm.mapObj.setView([lat, lon], 20);
       console.log(lat, lon);
 
-      vm.locationData.push(lat, lon);
+      vm.locationData = [lat, lon];
     }
 
     navigator.geolocation.getCurrentPosition(locationSucces);
@@ -61,9 +61,13 @@ export default {
   },
   methods: {
     focusMap() {
+      if (this.locationData === -1) return;
+
       this.mapObj.setView(this.locationData, 30);
     },
     findClosest() {
+      if (this.locationData === -1) return;
+
       if (this.polyline !== -1) {
         this.polyline.remove(map);
       }

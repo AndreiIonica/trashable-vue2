@@ -1,8 +1,7 @@
 <template>
   <div id="login-container">
-    <input type="email" class="input-text" id="first" placeholder="Email" v-model="email" />
-    <!-- eslint-disable-next-line max-len -->
-    <input type="password" class="input-text" id="second" placeholder="Password" v-model="password" />
+    <input type="email" class="input-text" id="first" v-model="email" @click="clearEmail" />
+    <input type="password" class="input-text" id="second" v-model="password" @click="clearPass" />
     <div id="third">
       <button class="btn-tall" @click="validateSignUp">Sign Up</button>
       <button class="btn-tall" @click="validateLogIn">Log In</button>
@@ -16,12 +15,16 @@ import { signup, login } from '../lib/DataManager';
 export default {
   data() {
     return {
-      email: null,
-      password: null,
+      email: 'Email',
+      password: 'password',
     };
   },
   methods: {
     async validateSignUp() {
+      if (!this.email || !this.password) {
+        alert('Please fill in email and password');
+        return;
+      }
       try {
         const token = await signup(this.email, this.password, 'Default Username');
 
@@ -34,6 +37,10 @@ export default {
       }
     },
     async validateLogIn() {
+      if (!this.email || !this.password) {
+        alert('Please fill in email and password');
+        return;
+      }
       try {
         const token = await login(this.email, this.password);
 
@@ -45,6 +52,12 @@ export default {
         else alert(data.message);
       }
     },
+    clearEmail() {
+      if (this.email === 'Email') this.email = null;
+    },
+    clearPass() {
+      if (this.password === 'password') this.password = null;
+    },
   },
 };
 </script>
@@ -52,7 +65,6 @@ export default {
 <style scoped>
 #login-container {
   /* background: #000000; */
-  opacity: 65%;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -101,19 +113,6 @@ export default {
   letter-spacing: 0em;
   width: 50%;
   border-radius: 10px;
-}
-
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #282828;
-  font-family: Roboto;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 1.5rem;
-  letter-spacing: 0em;
-  text-align: center;
-  /* Firefox specific */
-  opacity: 100%;
 }
 
 .btn-tall {
