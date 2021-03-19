@@ -1,7 +1,8 @@
 <template>
   <div id="login-container">
-    <input type="email" class="input-text" id="first" placeholder="Email" />
-    <input type="password" class="input-text" id="second" placeholder="Password" />
+    <input type="email" class="input-text" id="first" placeholder="Email" v-model="email" />
+    <!-- eslint-disable-next-line max-len -->
+    <input type="password" class="input-text" id="second" placeholder="Password" v-model="password" />
     <div id="third">
       <button class="btn-tall" @click="validateSignUp">Sign Up</button>
       <button class="btn-tall" @click="validateLogIn">Log In</button>
@@ -10,18 +11,39 @@
 </template>
 
 <script>
+import { signup, login } from '../lib/DataManager';
+
 export default {
   data() {
-    return {};
+    return {
+      email: null,
+      password: null,
+    };
   },
   methods: {
-    validateSignUp() {
-      // TODO
-      this.$router.push('/map');
+    async validateSignUp() {
+      try {
+        const token = await signup(this.email, this.password, 'Default Username');
+
+        this.$token = token;
+        this.$router.push('/map');
+      } catch (e) {
+        const { data } = e.response;
+        if (data.errors) alert(data.errors.join('\n'));
+        else alert(data.message);
+      }
     },
-    validateLogIn() {
-      // TODO
-      this.$router.push('/map');
+    async validateLogIn() {
+      try {
+        const token = await login(this.email, this.password);
+
+        this.$token = token;
+        this.$router.push('/map');
+      } catch (e) {
+        const { data } = e.response;
+        if (data.errors) alert(data.errors.join('\n'));
+        else alert(data.message);
+      }
     },
   },
 };
@@ -37,7 +59,7 @@ export default {
   left: 0;
   top: 0;
   z-index: 10;
-  background-image: url(../assets/dragos.jpeg);
+  background-image: url(../assets/earth-whiten.png);
   background-size: 130% 100%;
   background-position-x: center;
 

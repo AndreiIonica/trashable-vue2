@@ -31,6 +31,4 @@ body {
   height: 100%;
   width: 100vw;
 }
-/* TODO: add needed assets(icons, map markers) */
-/* TODO: color scheme here */
 </style>

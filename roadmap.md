@@ -1,12 +1,11 @@
 # Roadmap
 
-- [ ] JS - 1 saptamana
+- [x] JS - 1 saptamana
 
   - [x] General
   - [x] Variabile, obiecte
   - [x] Promises
   - [x] Browser APIs
-  - [ ] Linter and Formatter
 
 * [ ] Dezvoltare Aplicatie - ? zile
 
@@ -14,17 +13,17 @@
     - [x] Project Structure
     - [x] Librarie Componente
     - [x] Setup Router
-  - [ ] Sapt 2
+  - [x] Sapt 2
     - [x] Ecran Login
-      - [ ] Data Manager
+      - [x] Data Manager
     - [x] Ecran Start
-  - [ ] Sapt 3
+  - [x] Sapt 3
 
     - [x] Ecran Mapa
       - [x] Leaflet
       - [x] Functionalitate
         - [x] Focus
-        - [ ] Cel Mai Apropiat Cos( proximitate )
+        - [x] Cel Mai Apropiat Cos( proximitate )
         - [x] Zoom Control
         - [x] Log Out Menu
 
