@@ -7,13 +7,7 @@
 </template>
 
 <script>
-export default {
-  mounted() {
-    setTimeout(() => {
-      this.$router.push('/login');
-    }, 2000);
-  },
-};
+export default {};
 </script>
 
 <style>
@@ -28,6 +22,13 @@ export default {
 .fade-leave-active {
   opacity: 0;
 }
-/* TODO: add needed assets(icons, map markers) */
-/* TODO: color scheme here */
+body {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100vw;
+}
 </style>

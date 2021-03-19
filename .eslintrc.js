@@ -10,6 +10,8 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    // Using alerts to notify the user
+    'no-alert': 0,
     // Airbnb is strange with import rules
     import: 0,
   },
