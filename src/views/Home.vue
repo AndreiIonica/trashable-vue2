@@ -28,30 +28,24 @@ export default {
 </script>
 
 <style scoped>
-/* CSS bullshit to make div full screen */
 #start-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 10;
+  width: 100vw;
+  height: 100vh;
   background-image: url(../assets/earth-whiten.png);
   background-size: 125% 100%;
   background-position-x: center;
 
   background-repeat: no-repeat;
+
+  display: block;
 }
 #first {
-  position: fixed;
-  top: 50%;
-  width: 100%;
+  padding-top: 40vh;
   text-align: center;
+  padding-bottom: 17vh;
 }
+
 #second {
-  position: fixed;
-  top: 60%;
-  width: 100%;
   text-align: center;
 }
 
@@ -59,7 +53,7 @@ export default {
   font-family: Roboto;
   font-weight: bold;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   letter-spacing: 0em;
   text-align: center;
   line-height: 1;
@@ -73,6 +67,14 @@ export default {
   border: 1px solid #000000;
   border-radius: 10px;
 
-  width: 45%;
+  width: 150px;
+}
+
+/* For desktop users */
+/* TODO: better aspect ratio */
+@media (min-aspect-ratio: 245/198) {
+  #start-container {
+    background: #363f46;
+  }
 }
 </style>
