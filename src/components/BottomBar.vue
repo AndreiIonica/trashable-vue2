@@ -7,8 +7,6 @@
 </template>
 
 <script>
-/* eslint-disable no-undef */
-
 export default {
   methods: {
     focusMap() {

@@ -13,6 +13,7 @@
 import { signup, login } from '../lib/DataManager';
 
 export default {
+  // CSS placeholder works in dev mode but doesn't when i build it so i have to do this
   data() {
     return {
       email: 'Email',
@@ -65,39 +66,23 @@ export default {
 <style scoped>
 #login-container {
   /* background: #000000; */
-  position: fixed;
   width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 10;
+  height: 100vh;
   background-image: url(../assets/earth-whiten.png);
   background-size: 130% 100%;
   background-position-x: center;
 
   background-repeat: no-repeat;
-  /* text-align: center; */
+  text-align: center;
 }
 #first {
-  position: fixed;
-  top: 30%;
-  left: 0;
-  right: 0;
-  margin: auto;
+  margin-top: 30vh;
 }
 #second {
-  position: fixed;
-  top: 45%;
-  left: 0;
-  right: 0;
-  margin: auto;
+  margin-top: 8vh;
 }
 #third {
-  position: fixed;
-  top: 70%;
-  left: 0;
-  right: 0;
-  margin: auto;
+  margin-top: 13vh;
   width: 100%;
   text-align: center;
 }
