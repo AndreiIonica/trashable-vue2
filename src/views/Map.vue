@@ -38,7 +38,6 @@ export default {
       }).addTo(vm.mapObj);
 
       vm.mapObj.setView([lat, lon], 20);
-      console.log(lat, lon);
 
       vm.locationData = [lat, lon];
     }
