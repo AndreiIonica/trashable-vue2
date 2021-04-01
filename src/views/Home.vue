@@ -71,7 +71,6 @@ export default {
 }
 
 /* For desktop users */
-/* TODO: better aspect ratio */
 @media (min-aspect-ratio: 245/198) {
   #start-container {
     background: #363f46;

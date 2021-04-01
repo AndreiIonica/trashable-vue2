@@ -7,6 +7,8 @@
 
 <script>
 /* eslint-disable object-curly-newline */
+// TODO: load leaflet from npm
+// REFACTOR: refactor this in multiple files
 import BottomBar from '../components/BottomBar.vue';
 import { createMap, currentLocIcon, distance, trashcanIcon } from '../lib/MapLoader';
 import { toateCosurile } from '../lib/DataManager';
