@@ -7,7 +7,6 @@
 
 <script>
 /* eslint-disable object-curly-newline */
-// TODO: load leaflet from npm
 // REFACTOR: refactor this in multiple files
 import BottomBar from '../components/BottomBar.vue';
 import { createMap, currentLocIcon, distance, trashcanIcon } from '../lib/MapLoader';
@@ -27,7 +26,12 @@ export default {
     };
   },
   async mounted() {
-    this.trashcans = await toateCosurile();
+    try {
+      this.trashcans = await toateCosurile();
+    } catch (error) {
+      console.log(error);
+    }
+
     this.mapObj = createMap();
 
     const vm = this;
@@ -97,6 +101,7 @@ export default {
 
       this.addLine(latInitial, lonInitial, closestTrashcan.latitude, closestTrashcan.longitude);
     },
+
     addLine(lat1, lon1, lat2, lon2) {
       const latlngs = [
         [lat1, lon1],
@@ -119,28 +124,15 @@ export default {
 
 <style scoped>
 #map-container {
-  position: fixed;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 10;
+  display: grid;
+  grid-template-rows: 92% 8%;
 }
 #map {
   background: rgb(136, 136, 136);
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 92%;
+  /* height: 92vh; */
   margin: 0;
-}
-/* Id of div inside BottomBar component, a bit dirty,might be a better way to do this */
-#control-container {
-  position: fixed;
-  width: 100%;
-  height: 8%;
-  top: 92%;
-  left: 0;
 }
 </style>
